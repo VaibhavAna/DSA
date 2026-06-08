@@ -1,89 +1,395 @@
-// let a=10;
-// let b="20";
-// // console.log(typeof(a+b));
+// ==========================================
+// DAY 1 - JavaScript Fundamentals for DSA
+// ==========================================
 
-// //Diff Num and Strings.
+// ------------------------------------------
+// Variables and Data Types
+// ------------------------------------------
 
-// // "10"+"1"= "101" ->String
-// //When ever we add two string it is called concatination not addition.
-//  console.log("sum of 10 and 20" (+a+b));
+let a = 10;
+let b = "20";
 
+// typeof is used to check data type
 
+console.log(typeof a); // number
+console.log(typeof b); // string
 
-//Type coercion.
-// String ko no mai convert kr deyga.
-// Ex-
-// Console.log("1"-1);
-// It will print 0 because its only function is to subtract .
+// Common Data Types
 
-// console.log("1"+1);
+// Number
+let num = 100;
 
-//* will do work 
-// + It can do 2 work Addition and concation 
-// and addition can perform only when two no is Present
+// String
+let name = "Vaibhav";
 
-// let age = Number(prompt("What is your age"));
-// console.log(typeof age);
+// Boolean
+let isLoggedIn = true;
 
-//prompt make string output 
+// Undefined
+let x;
 
-//Type casting 
+// Null
+let y = null;
 
-//converting into any any data from another like string to Number.
+// ------------------------------------------
+// String Concatenation
+// ------------------------------------------
 
+// Whenever we add two strings, it is called
+// concatenation, not addition.
 
-//*****Swapping*****
+console.log("10" + "1"); // 101
 
-//1 Method:-Swap with extra variable.
+console.log("Sum of 10 and 20: " + a + b);
+// Output: Sum of 10 and 20: 1020
 
-// let a=10;
-// let b=20;
-// let c;
+// If we want actual addition:
 
-// c=a;
-// a=b;
-// b=c;
+console.log(a + Number(b));
+// Output: 30
 
-// console.log(a);
-// console.log(b);
+// ------------------------------------------
+// Type Coercion
+// ------------------------------------------
 
-//So output will be a=20 and b=10 
+// JavaScript automatically converts one
+// data type into another when required.
 
-// 2.Method:- Swap two variable without using extra variable .
+console.log("1" - 1);
+// Output: 0
 
-// let a= 10;
-// let b=20;
+// String "1" becomes Number 1
 
-// a=a+b;
-// b=a-b;
-// a=a-b;
+console.log("5" * 2);
+// Output: 10
 
-// console.log(a,b);
+console.log("10" / 2);
+// Output: 5
 
-//3.Method:-Destructing 
+console.log("5" - 2);
+// Output: 3
 
-// let a =10;
-// let b=20 ;
+console.log("5" + 2);
+// Output: "52"
 
-// [a,b]= [b,a]
+// Note:
+// + can perform both addition and concatenation.
+// *, /, - only perform mathematical operations.
 
-// console.log(a,b);
+// ------------------------------------------
+// Type Casting
+// ------------------------------------------
 
-//Operators 
-// 1.Arthmatic:-+,-,/,%,*
+// Converting one data type into another.
 
-// console.log(a/b);
+let age = Number(prompt("Enter your age"));
 
-// Math.floor we use so we can get single number without integer (without pont ex-2.1234505)
-// divison sign qutioned. 
-//mod will always give reminder.
+console.log(typeof age);
+// Output: number
 
-// 2.Relational operators
-// 3.logical operators
-// 4.Unary operators
+// Note:
+// prompt() always returns a string.
 
+// ------------------------------------------
+// Swapping Two Variables
+// ------------------------------------------
 
+// Method 1: Using Extra Variable
 
+let num1 = 10;
+let num2 = 20;
+let temp;
 
+temp = num1;
+num1 = num2;
+num2 = temp;
 
+console.log(num1, num2);
+// Output: 20 10
 
+// Method 2: Without Extra Variable
+
+let p = 10;
+let q = 20;
+
+p = p + q;
+q = p - q;
+p = p - q;
+
+console.log(p, q);
+// Output: 20 10
+
+// Method 3: Destructuring (Modern JavaScript)
+
+let m = 10;
+let n = 20;
+
+[m, n] = [n, m];
+
+console.log(m, n);
+// Output: 20 10
+
+// ------------------------------------------
+// Arithmetic Operators
+// ------------------------------------------
+
+// + Addition
+// - Subtraction
+// * Multiplication
+// / Division
+// % Modulus (Remainder)
+
+console.log(10 + 5); // 15
+console.log(10 - 5); // 5
+console.log(10 * 5); // 50
+console.log(10 / 5); // 2
+console.log(10 % 3); // 1
+
+// Modulus gives remainder.
+
+// Last digit of a number
+
+let number = 4687;
+
+console.log(number % 10);
+// Output: 7
+
+// Remove last digit
+
+console.log(Math.floor(number / 10));
+// Output: 468
+
+// ------------------------------------------
+// Relational (Comparison) Operators
+// ------------------------------------------
+
+// >  Greater Than
+// <  Less Than
+// >= Greater Than or Equal To
+// <= Less Than or Equal To
+// != Not Equal
+// !== Strict Not Equal
+
+console.log(10 <= 15);
+// true
+
+console.log(10 !== 11);
+// true
+
+// ------------------------------------------
+// Assignment vs Equality
+// ------------------------------------------
+
+// = Assignment Operator
+
+let value = 10;
+
+// == Loose Equality
+
+console.log(5 == "5");
+// true
+
+// === Strict Equality
+
+console.log(5 === "5");
+// false
+
+// == checks only values
+// === checks value + data type
+
+// ------------------------------------------
+// Logical Operators
+// ------------------------------------------
+
+// && AND
+// || OR
+// ! NOT
+
+console.log(true && true);
+// true
+
+console.log(true && false);
+// false
+
+console.log(true || false);
+// true
+
+console.log(!true);
+// false
+
+// Short Circuiting
+
+// AND (&&)
+// If first condition is false,
+// JavaScript stops checking further.
+
+// OR (||)
+// If first condition is true,
+// JavaScript stops checking further.
+
+// ------------------------------------------
+// Unary Operators
+// ------------------------------------------
+
+// ++ Increment
+// -- Decrement
+
+let count = 5;
+
+count++;
+
+console.log(count);
+// 6
+
+count--;
+
+console.log(count);
+// 5
+
+// ------------------------------------------
+// Pre and Post Increment
+// ------------------------------------------
+
+let a1 = 5;
+
+console.log(a1++);
+// Output: 5
+
+console.log(a1);
+// Output: 6
+
+let b1 = 5;
+
+console.log(++b1);
+// Output: 6
+
+console.log(b1);
+// Output: 6
+
+// ------------------------------------------
+// Boolean Increment Example
+// ------------------------------------------
+
+let flag = true;
+
+flag++;
+
+console.log(flag);
+// Output: 2
+
+// true becomes 1
+// then 1 + 1 = 2
+
+// ------------------------------------------
+// Invalid Increment Example
+// ------------------------------------------
+
+// let a = 10++;
+// Error
+
+// Reason:
+// ++ can only be used on variables,
+// not directly on values.
+
+let z = 10;
+
+z++;
+
+console.log(z);
+// 11
+
+// ------------------------------------------
+// Math Functions
+// ------------------------------------------
+
+console.log(Math.floor(4.9));
+// 4
+
+console.log(Math.ceil(4.1));
+// 5
+
+console.log(Math.round(4.5));
+// 5
+
+console.log(Math.trunc(4.9));
+// 4
+
+console.log(Math.abs(-10));
+// 10
+
+console.log(Math.max(10, 20, 30));
+// 30
+
+console.log(Math.min(10, 20, 30));
+// 10
+
+console.log(Math.random());
+// Random number between 0 and 1
+
+// ------------------------------------------
+// Truthy and Falsy Values
+// ------------------------------------------
+
+// Falsy Values
+
+// false
+// 0
+// ""
+// null
+// undefined
+// NaN
+
+// Everything else is Truthy
+
+if ("Hello") {
+console.log("Truthy");
+}
+
+// ------------------------------------------
+// let vs const vs var
+// ------------------------------------------
+
+// let -> value can change
+
+let age1 = 20;
+age1 = 25;
+
+// const -> value cannot change
+
+const PI = 3.14;
+
+// var -> old way of declaring variables
+// avoid using var in modern JavaScript
+
+var city = "Delhi";
+
+// ------------------------------------------
+// Template Literals
+// ------------------------------------------
+
+let student = "Vaibhav";
+
+console.log(`Hello ${student}`);
+
+// Output:
+// Hello Vaibhav
+
+// ==========================================
+// DAY 1 SUMMARY
+// ==========================================
+
+// 1. Variables
+// 2. Data Types
+// 3. String Concatenation
+// 4. Type Coercion
+// 5. Type Casting
+// 6. Swapping
+// 7. Arithmetic Operators
+// 8. Relational Operators
+// 9. Equality Operators
+// 10. Logical Operators
+// 11. Unary Operators
+// 12. Math Functions
+// 13. Truthy & Falsy Values
+// 14. let, const, var
+// 15. Template Literals
