@@ -393,3 +393,19 @@ console.log(`Hello ${student}`);
 // 13. Truthy & Falsy Values
 // 14. let, const, var
 // 15. Template Literals
+
+
+
+//Q
+
+//Area of rectangle
+
+// let a=5;
+// let b=7;
+// console.log(a*b);
+
+//parameter 
+
+//2(l*b)
+
+//Heros formula 
